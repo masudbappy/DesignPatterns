@@ -1,7 +1,7 @@
-package com.bappy.creationalDesignPattern;
+package com.bappy.creationalDesignPattern.singletonPattern;
 
 public class SingletonMain {
-    public static void main(String args[]){
+    public static void main(String args[]) {
 
         DBSingleton singleton = DBSingleton.getInstance();
 

@@ -1,4 +1,4 @@
-package com.bappy.creationalDesignPattern;
+package com.bappy.creationalDesignPattern.singletonPattern;
 
 public class DBSingleton {
     // variable for eagarly loading
