@@ -1,0 +1,25 @@
+Adapter pattern:
+=================
+    The adapter pattern is a great pattern for connecting new code to legacy code without having
+to change the working contract that was produced from the legacy code originally.
+
+Concepts:
+=========
+    We would choose this pattern when we were wanting to have a client talk to an
+existing interface. This is usually the case when one portion of our system is a legacy app or module that
+we don't want to, or can't possibly change. It effectively is translating request from the client
+the code that we are adapting to, basically a client talking to a legacy app or an adaptee that we have
+used an adapter to talk to.
+Examples of this in the java API are the collections API, sepceially the usage of the arrays to lists conversion.
+Arrays were original, or you could classify as a legacy API, and lists were newer part of the
+collections API introduced later.
+There are methods in the collections API to adapt arrays to lists.
+Another Java are the stream classes surronding I/O. almost all of the stream classes have adapters to work
+with other streams or readers.
+
+Pitfalls
+========
+Not a lot
+don't complicate
+multiple Adapters
+Don't add functionality
