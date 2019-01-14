@@ -1,4 +1,4 @@
-package com.bappy.structuralDesignPattern;
+package com.bappy.structuralDesignPattern.adapterPattern;
 
 import java.util.List;
 

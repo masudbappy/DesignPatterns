@@ -1,0 +1,125 @@
+Bridge Pattern
+==============
+Concepts
+=======
+The concepts surrounding why you would choose the bridge pattern are that it is meant to decouple
+ abstraction and implementation. To do this you utilize a few techniques, namely encapsulation,
+ composition, and inheritance. A key concept with the bridge pattern and why it is more than just
+ inheritance is that changes in the abstraction won't affect the client. What is meant by this is
+ that the client is unaware of the abstraction on the back-end. This is important because this
+ decouples the implementation from the contract or interface that the client is using. One of the
+ key reasons for choosing this pattern is that we know the details won't be right to begin with.
+ This may sound a little strange at first, but the bridge allows for a level of indirection that
+ we add into our application. If you aren't quite sure of what the end product of what you're
+ building will be, the bridge is great for giving us flexibility without breaking things with
+ change. Examples of this are drivers. We use drivers all the time and the bridge is in a lot of
+ ways just a driver. A good example of this in the Java API are JDBC drivers. We have an interface
+ that we work with and a driver that works with the underlying database.
+
+Design Considerations
+======================
+The design of the bridge is more complicated than the adapter. It will utilize interfaces and
+abstract classes. It also places an emphasis on composition over inheritance, but it is more than
+just composition. Your application is designed to expect change from both sides. Normally the UML
+for this pattern would be on this slide as well, but it is too large and will be on the next diagram.
+The pieces of the diagram are an abstraction, implementer, refined abstraction, and a concrete implementer.
+Let's look at that diagram now. show in images.
+
+UML Diagram
+===========
+If you aren't very familiar with UML, don't let the names of the objects in this diagram confuse you with
+the types of classes that they are. The abstraction in this case is an interface. This interface can be
+refined into our refined abstraction, and this is just a more specific implementation of that interface.
+From here we have our implementor, which is the hierarchy of our abstract classes. Our abstract classes will
+then be defined into a more concrete implementation, which will utilize composition of our various pieces of
+our bridge pattern to define those concrete implementations. There are a few more moving parts in this pattern
+we will look at in more detail when we create our own pattern, but first let's look at an example of this
+pattern in our everyday usage.
+
+Example: JDBC
+=============
+JDBC is an API for executing SQL statements. Classes that implement the interface are JDBC drivers, and applications
+that rely on these drivers are abstractions that can work with any database for which a JDBC driver exists. The JDBC
+architecture decouples an abstraction from its implementation so that the two can vary independently, thus being an
+excellent example of a bridge pattern. Let's see this code in a live demo.
+
+Demo: JDBC
+==========
+In this demo we're going to go through and use the JDBC API to go ahead and create a database table in a Derby
+database. So this example is pretty straightforward. In fact, there's a more detailed example of this in the
+Creational Design Patterns course under the singleton that shows how to wrap all of this, so we only get one
+instance of that connection each time we want to utilize it. But in this example we're going to go ahead and
+register our driver, and then we're going to build our URL, which actually builds our database for us if you're
+familiar with Derby at all, it doesn't matter if you're not. Then we can use that driver manager to get our connection.
+Now the interesting thing about this is that our abstraction in this is the client. The client is abstracted away from
+the underlying details of what's going on, and the driver that we're using is also enabling us to use a different
+database with the same code or different code with that same database, there's that bridge that goes between the two
+using the driver and the API that we had. So from there we can create our statement and then execute our statement,
+which will tell us that we've created a table. So let's go ahead and run this, and if I go ahead and execute this you
+can see that our table was created. It's a pretty straightforward example, but it's a good example of the JDBC API and
+how it is a bridge to an underlying database. We could swap out our database with MySQL or SQL Server, Oracle, any of
+those, and our client could stay the same, or our client can change without our underling database having to worry about
+the details or whatever other configurations we need to, we can just utilize our driver to make that bridge between
+the two.
+
+Demo: Shape Without a Bridge
+=============================
+Here's an example that illustrates the problem that we are trying to solve with the bridge pattern. So it's a simple
+application. We have some shapes, a circle that we're going to create that's an instance of a blue circle, a square
+that is an instance of a red square, and then we're going to say applyColor to this. Now the problem with this is that
+it can't grow with us, it has orthogonal problems, and so as we get in here we can see we've got a shape class that is
+abstract, and this is what people think of when they're referring to, oh, I'm going to use inheritance to solve this
+problem, well inheritance doesn't really solve this problem. I have a shape, I have a circle that extends it, I have a
+square that extends that, and then we can start implementing our colored instances. So we have our red square, we have
+our red circle, we have a blue circle and a blue square. The problem is, and this code will run just fine when we go to
+run our application it'll run and it'll apply our colors to it, so you can see we have our blue color and our red color,
+but what happens when we want to say, add a green square. Oh, well now we've got to go through and create a New, Class,
+and say oh, well we want a GreenSquare, and its superclass is going to be the Square, and we'll go ahead and click
+Finish and it will go through and generate a method for us, and we'll say oh, well let's apply our color, so we'll
+do System. out. println and say that we're going to be Applying green color. This isn't that hard because this is a
+very simple example, and that's what I really don't like about this example, it's such a simple solution, but you see
+that for every color I want to add I have to go add a GreenSquare, I'd have to do that same thing, I'd have to add a
+GreenCircle, and now we have yellow and we're going to add a YellowSquare and a YellowCircle, and then we run into the
+bigger problem of what happens when we add another shape. Oh, so let's say we add rectangle. Well now I've got to go
+through and add a rectangle that's red, blue, green, yellow, and it just keeps expanding and expanding from there.
+So just to show that this works fine, the code will run just fine with us, so we'll do a GreenSquare, it'll run just
+fine for us, = new GreenSquare, and then we can apply that, so we can say greenSquare. applyColor, and I know it'll
+run just fine, you know it'll run just fine, so we can see all of our colors, our blue color, red color, and green
+color, but it can't expand with us, it can't grow with us. So let's look at a different example about how we
+can solve this.
+
+Demo: Shape With a Bridge
+=========================
+So here's a demo of that exact same shape problem using the bridge pattern. You can see right off the bat that one
+major change here is our client has changed, we now have colors extracted into their own interface and class hierarchy,
+and shapes are still implemented the same way, but now we've utilized composition. Let's talk about how that all works.
+So our shape object is still an abstract class, it still has an abstract void method for applying color, but now we
+take a colon in the constructor to utilize through composition. Color is its own interface now, and we have the
+applyColor method defined in that interface. So Shape has applyColor and Color has the color that it's going to
+apply, it looks a little redundant there, but it's not. Now as we create colors we can look at our Blue color and we
+can say that we're applying the blue color and we look at one of our shapes, such as our Square, we can see that it
+is utilizing that composition to go ahead and apply the color. So let's run this, make sure that it works, I want to
+do Run As, Java Application, and you can see that we apply our blue color and our red color. But now let's show by
+adding another color or a shape to this how it's not the issue of an orthogonal problem like we had before. So let's
+go ahead and add another color here, and we'll say New, Class, and we want to do Green, and our interface is Color.
+We'll go ahead and click Finish, and now it has our color for us here. So we'll say System. out. println, just for our
+basic example, and we're going to apply the green color, so we're applying our green color. And to save this, now
+everything works here, we go back to our sample, and now if I want a green circle, we already have our shape and our
+square here, let's go ahead and create a new circle, let's say Shape, and we'll do a greenCircle = new Circle, and I
+can just pass in green. Now we have to create an instance of our green here that hasn't been defined yet, which is
+easy enough to do, so we'll say Color green = new Green, and save that. Now we can come down here, and just to execute
+it and make sure that it runs right, we'll say greenCircle. applyColor, and run it. Now you can see that we have our
+blue, red, and green colors being applied, but notice one thing we did not do in here, we did not change our circle
+object at all. It was abstracted out from the changes of the colors on the back-end. Same thing if I want to do an
+instance of a GreenSquare now, I can also say Shape greenSquare = new Square, I can now pass in that same green color
+instance to it and apply that color down here, greenSquare. applyColor, and save it. Now if we run this it'll also
+work as well. So we were able to now add changes, add colors, we could add another shape too to really illustrate
+it, but you get the idea. The bridge is the way we are utilizing that composition and abstracting out the properties
+on this. Now why I don't like this example is because typically, and I'm not saying that there's not ever an instance,
+but typically we don't have a hierarchy of colors, colors are more of an attribute, but I do believe that this
+illustrates the problem very well of what the bridge is trying to solve, that I have something over on one side,
+this shape, and something over on this other side that's this color, and I want those two to be independent of one
+another of changes, and you saw that, we were able to add a shape or add a color without having to go through and
+change the other half of our application. So we're getting changes from both sides that can act independently of one
+another, and that's why I really like the bridge pattern when we're dealing with something that we're not quite
+aware of what our end details are going to be.
