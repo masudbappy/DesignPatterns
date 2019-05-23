@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eff9beaf-d366-4cd9-817e-92d6f22b3896" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/Bappy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/interfaceExample/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/interfaceExample/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/interfaceExample/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/interfaceExample/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/interfaceExample/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bappy/searchingAlgo/LinearSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/bappy/searchingAlgo/BinarySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RawCode/com/bappy/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RawCode/com/bappy/Demo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bappy/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bappy/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bappy/searchingAlgo/LinearSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bappy/searchingAlgo/LinearSearch.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +33,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bappy/searchingAlgo/LinearSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+            <state relative-caret-position="462">
+              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/bappy/searchingAlgo/BinarySearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -101,7 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/bappy/creationalDesignPattern/factoryPattern/ContactPage.java" />
         <option value="$PROJECT_DIR$/src/com/bappy/creationalDesignPattern/factoryPattern/PostPage.java" />
         <option value="$PROJECT_DIR$/src/com/bappy/creationalDesignPattern/factoryPattern/Website.java" />
         <option value="$PROJECT_DIR$/src/com/bappy/creationalDesignPattern/factoryPattern/CommentPage.java" />
@@ -152,6 +153,7 @@
         <option value="$PROJECT_DIR$/src/com/bappy/interfaceExample/Test.java" />
         <option value="$PROJECT_DIR$/src/com/bappy/interfaceExample/Square.java" />
         <option value="$PROJECT_DIR$/src/com/bappy/searchingAlgo/LinearSearch.java" />
+        <option value="$PROJECT_DIR$/src/com/bappy/searchingAlgo/BinarySearch.java" />
       </list>
     </option>
   </component>
@@ -193,6 +195,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="bappy" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bappy" type="462c0819:PsiDirectoryNode" />
+              <item name="searchingAlgo" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -202,7 +211,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558615170767" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558623756634" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -235,20 +244,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.BinarySearch">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdapterDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bappy.structuralDesignPattern.adapterPattern.AdapterDemo" />
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bappy.searchingAlgo.BinarySearch" />
       <module name="RawCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bappy.structuralDesignPattern.adapterPattern.*" />
+          <option name="PATTERN" value="com.bappy.searchingAlgo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -270,13 +279,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeBridgeDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bappy.structuralDesignPattern.bridgePattern.shapewithbridge.ShapeBridgeDemo" />
+    <configuration name="LinearSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bappy.searchingAlgo.LinearSearch" />
       <module name="RawCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bappy.structuralDesignPattern.bridgePattern.shapewithbridge.*" />
+          <option name="PATTERN" value="com.bappy.searchingAlgo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -284,13 +293,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeBridgeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bappy.structuralDesignPattern.bridgePattern.ShapeBridgeDemo" />
+    <configuration name="ShapeBridgeDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bappy.structuralDesignPattern.bridgePattern.shapewithbridge.ShapeBridgeDemo" />
       <module name="RawCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bappy.structuralDesignPattern.bridgePattern.*" />
+          <option name="PATTERN" value="com.bappy.structuralDesignPattern.bridgePattern.shapewithbridge.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -342,19 +351,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AdapterDemo" />
-      <item itemvalue="Application.ShapeBridgeDemo" />
       <item itemvalue="Application.ShapeBridgeDemo (1)" />
       <item itemvalue="Application.Demo" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.LinearSearch" />
+      <item itemvalue="Application.BinarySearch" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinarySearch" />
+        <item itemvalue="Application.LinearSearch" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Demo" />
         <item itemvalue="Application.ShapeBridgeDemo (1)" />
-        <item itemvalue="Application.ShapeBridgeDemo" />
-        <item itemvalue="Application.AdapterDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -388,7 +397,7 @@
     <frame x="992" y="24" width="928" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.361678" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.37414965" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -397,13 +406,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2669537" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18299246" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935413" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.21851453" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.11733046" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32938644" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -430,17 +439,22 @@
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/bappy/searchingAlgo/BinarySearch.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/bappy/searchingAlgo/BinarySearch.java</url>
+          <line>4</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/bappy/creationalDesignPattern/factoryPattern/AboutPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bappy/creationalDesignPattern/factoryPattern/CommentPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -899,8 +913,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bappy/searchingAlgo/LinearSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+        <state relative-caret-position="462">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bappy/searchingAlgo/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
